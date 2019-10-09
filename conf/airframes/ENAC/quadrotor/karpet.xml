@@ -77,15 +77,15 @@
     <set servo="FL" value="motor_mixing.commands[MOTOR_FRONT_LEFT]"/>
   </command_laws>
 
-
+  
   <section name="IMU" prefix="IMU_">
     <define name="GYRO_P_SIGN" value="-1"/>
-    <define name="GYRO_Q_SIGN" value="1"/>
-    <define name="GYRO_R_SIGN" value="-1"/>
+    <define name="GYRO_Q_SIGN" value="-1"/>
+    <define name="GYRO_R_SIGN" value="1"/>
 
     <define name="ACCEL_X_SIGN" value="-1"/>
-    <define name="ACCEL_Y_SIGN" value="1"/>
-    <define name="ACCEL_Z_SIGN" value="-1"/>
+    <define name="ACCEL_Y_SIGN" value="-1"/>
+    <define name="ACCEL_Z_SIGN" value="1"/>
 
     <define name="ACCEL_X_NEUTRAL" value="-57"/>
     <define name="ACCEL_Y_NEUTRAL" value="-4"/>
