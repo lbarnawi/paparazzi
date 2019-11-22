@@ -3,7 +3,7 @@
 <airframe name="Karpet">
 
   <description>
-    * Autopilot:   Apogee / Chimera
+    * Autopilot:   Apogee (upsidedown)
     * Actuators:   PWM motor controller (DSHOT)
     * Telemetry:   UDP datalink
     * GPS:         datalink
@@ -31,7 +31,7 @@
     <!--module name="light_scheduller">
       <define name="WS2812_LED_N" value="4"/>
       <define name="WS2812_PORT" value="PPM_IN"/>
-    </modulei-->
+    </module-->
 
     <module name="gps" type="datalink">
       <configure name="USE_MAGNETOMETER" value="FALSE"/>
@@ -39,10 +39,7 @@
 
     <module name="motor_mixing"/>
     <module name="radio_control" type="datalink"/>
-    <module name="imu" type="apogee_mpu9150">
-      <define name="APOGEE_LOWPASS_FILTER" value="MPU60X0_DLPF_256HZ"/>
-      <define name="APOGEE_SMPLRT_DIV"     value="1"/>
-    </module>
+    <module name="imu" 		       type="apogee_mpu9150"/>
     <module name="ahrs"          type="int_cmpl_quat"/>
     <module name="ins"           type="gps_passthrough"/>
     <module name="stabilization" type="int_quat"/>
@@ -79,20 +76,21 @@
 
   
   <section name="IMU" prefix="IMU_">
-    <define name="GYRO_P_SIGN" value="1"/>
-    <define name="GYRO_Q_SIGN" value="1"/>
+    <define name="GYRO_P_SIGN" value="-1"/>
+    <define name="GYRO_Q_SIGN" value="-1"/>
     <define name="GYRO_R_SIGN" value="1"/>
 
-    <define name="ACCEL_X_SIGN" value="1"/>
-    <define name="ACCEL_Y_SIGN" value="1"/>
+    <define name="ACCEL_X_SIGN" value="-1"/>
+    <define name="ACCEL_Y_SIGN" value="-1"/>
     <define name="ACCEL_Z_SIGN" value="1"/>
 
-    <define name="ACCEL_X_NEUTRAL" value="-57"/>
-    <define name="ACCEL_Y_NEUTRAL" value="-4"/>
-    <define name="ACCEL_Z_NEUTRAL" value="-192"/>
-    <define name="ACCEL_X_SENS" value="2.46154229935" integer="16"/>
-    <define name="ACCEL_Y_SENS" value="2.43602916679" integer="16"/>
-    <define name="ACCEL_Z_SENS" value="2.46158796549" integer="16"/>
+    <define name="ACCEL_X_NEUTRAL" value="11"/>
+    <define name="ACCEL_Y_NEUTRAL" value="62"/>
+    <define name="ACCEL_Z_NEUTRAL" value="48"/>
+    <define name="ACCEL_X_SENS" value="2.45707584855" integer="16"/>
+    <define name="ACCEL_Y_SENS" value="2.44200381766" integer="16"/>
+    <define name="ACCEL_Z_SENS" value="2.46279385584" integer="16"/>
+
   </section>
 
   <section name="AHRS" prefix="AHRS_">
@@ -170,7 +168,7 @@
   <section name="AUTOPILOT">
     <define name="MODE_STARTUP" value="AP_MODE_NAV"/>
     <define name="MODE_MANUAL"  value="AP_MODE_ATTITUDE_DIRECT"/>
-    <define name="MODE_AUTO1"   value="AP_MODE_HOVER_Z_HOLD"/>
+    <define name="MODE_AUTO1"   value="AP_MODE_ATTITUDE_Z_HOLD"/>
     <define name="MODE_AUTO2"   value="AP_MODE_NAV"/>
     <define name="ARRIVED_AT_WAYPOINT"   value="0.25"/>
   </section>

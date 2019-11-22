@@ -3,7 +3,7 @@
 <airframe name="Karpet">
 
   <description>
-    * Autopilot:   Apogee / Chimera
+    * Autopilot:   Apogee (upsidedown)
     * Actuators:   PWM motor controller (DSHOT)
     * Telemetry:   UDP datalink
     * GPS:         datalink
@@ -31,7 +31,7 @@
     <!--module name="light_scheduller">
       <define name="WS2812_LED_N" value="4"/>
       <define name="WS2812_PORT" value="PPM_IN"/>
-    </modulei-->
+    </module-->
 
     <module name="gps" type="datalink">
       <configure name="USE_MAGNETOMETER" value="FALSE"/>
@@ -39,12 +39,9 @@
 
     <module name="motor_mixing"/>
     <module name="radio_control" type="datalink"/>
-    <module name="imu" type="apogee_mpu9150">
-      <define name="APOGEE_LOWPASS_FILTER" value="MPU60X0_DLPF_256HZ"/>
-      <define name="APOGEE_SMPLRT_DIV"     value="1"/>
-    </module>
-    <module name="ahrs"          type="int_cmpl_quat"/>
-    <module name="ins"           type="gps_passthrough"/>
+    <module name="imu" type="apogee_mpu9150"/>
+    <module name="ahrs" type="int_cmpl_quat"/>
+    <module name="ins" type="gps_passthrough"/>
     <module name="stabilization" type="int_quat"/>
 
   </firmware>
@@ -58,14 +55,14 @@
 
 
   <commands>
-    <axis name="ROLL"   failsafe_value="0"/>
-    <axis name="PITCH"  failsafe_value="0"/>
-    <axis name="YAW"    failsafe_value="0"/>
+    <axis name="ROLL" failsafe_value="0"/>
+    <axis name="PITCH" failsafe_value="0"/>
+    <axis name="YAW" failsafe_value="0"/>
     <axis name="THRUST" failsafe_value="0"/>
   </commands>
 
   <section name="MIXING" prefix="MOTOR_MIXING_">
-    <define name="TYPE"    value="QUAD_X"/>
+    <define name="TYPE" value="QUAD_X"/>
     <define name="REVERSE" value="false"/>
   </section>
 
@@ -79,50 +76,51 @@
 
   
   <section name="IMU" prefix="IMU_">
-    <define name="GYRO_P_SIGN" value="1"/>
-    <define name="GYRO_Q_SIGN" value="1"/>
+    <define name="GYRO_P_SIGN" value="-1"/>
+    <define name="GYRO_Q_SIGN" value="-1"/>
     <define name="GYRO_R_SIGN" value="1"/>
 
-    <define name="ACCEL_X_SIGN" value="1"/>
-    <define name="ACCEL_Y_SIGN" value="1"/>
+    <define name="ACCEL_X_SIGN" value="-1"/>
+    <define name="ACCEL_Y_SIGN" value="-1"/>
     <define name="ACCEL_Z_SIGN" value="1"/>
 
-    <define name="ACCEL_X_NEUTRAL" value="-57"/>
-    <define name="ACCEL_Y_NEUTRAL" value="-4"/>
-    <define name="ACCEL_Z_NEUTRAL" value="-192"/>
-    <define name="ACCEL_X_SENS" value="2.46154229935" integer="16"/>
-    <define name="ACCEL_Y_SENS" value="2.43602916679" integer="16"/>
-    <define name="ACCEL_Z_SENS" value="2.46158796549" integer="16"/>
+    <define name="ACCEL_X_NEUTRAL" value="11"/>
+    <define name="ACCEL_Y_NEUTRAL" value="62"/>
+    <define name="ACCEL_Z_NEUTRAL" value="48"/>
+    <define name="ACCEL_X_SENS" value="2.45707584855" integer="16"/>
+    <define name="ACCEL_Y_SENS" value="2.44200381766" integer="16"/>
+    <define name="ACCEL_Z_SENS" value="2.46279385584" integer="16"/>
+
   </section>
 
   <section name="AHRS" prefix="AHRS_">
     <define name="HEADING_UPDATE_GPS_MIN_SPEED" value="0"/>
-    <define name="USE_GPS_HEADING"              value="TRUE"/>
+    <define name="USE_GPS_HEADING" value="TRUE"/>
   </section>
 
 
   <section name="STABILIZATION_ATTITUDE" prefix="STABILIZATION_ATTITUDE_">
 
     <!-- setpoints -->
-    <define name="SP_MAX_PHI"   value="45."  unit="deg"/>
-    <define name="SP_MAX_THETA" value="45."  unit="deg"/>
-    <define name="SP_MAX_R"     value="90." unit="deg/s"/>
-    <define name="DEADBAND_R"   value="250"/>
+    <define name="SP_MAX_PHI" value="45." unit="deg"/>
+    <define name="SP_MAX_THETA" value="45." unit="deg"/>
+    <define name="SP_MAX_R" value="90." unit="deg/s"/>
+    <define name="DEADBAND_R" value="250"/>
 
     <!-- reference -->
-    <define name="REF_OMEGA_P"  value="800" unit="deg/s"/>
-    <define name="REF_ZETA_P"   value="0.85"/>
-    <define name="REF_MAX_P"    value="300." unit="deg/s"/>
+    <define name="REF_OMEGA_P" value="800" unit="deg/s"/>
+    <define name="REF_ZETA_P" value="0.85"/>
+    <define name="REF_MAX_P" value="300." unit="deg/s"/>
     <define name="REF_MAX_PDOT" value="RadOfDeg(7000.)"/>
 
-    <define name="REF_OMEGA_Q"  value="800" unit="deg/s"/>
-    <define name="REF_ZETA_Q"   value="0.85"/>
-    <define name="REF_MAX_Q"    value="300." unit="deg/s"/>
+    <define name="REF_OMEGA_Q" value="800" unit="deg/s"/>
+    <define name="REF_ZETA_Q" value="0.85"/>
+    <define name="REF_MAX_Q" value="300." unit="deg/s"/>
     <define name="REF_MAX_QDOT" value="RadOfDeg(7000.)"/>
 
-    <define name="REF_OMEGA_R"  value="500" unit="deg/s"/>
-    <define name="REF_ZETA_R"   value="0.85"/>
-    <define name="REF_MAX_R"    value="90." unit="deg/s"/>
+    <define name="REF_OMEGA_R" value="500" unit="deg/s"/>
+    <define name="REF_ZETA_R" value="0.85"/>
+    <define name="REF_MAX_R" value="90." unit="deg/s"/>
     <define name="REF_MAX_RDOT" value="RadOfDeg(900.)"/>
 
     <!-- feedback -->
@@ -139,40 +137,40 @@
     <define name="PSI_IGAIN" value="20"/>
 
     <!-- feedforward -->
-    <define name="PHI_DDGAIN"   value="69"/>
+    <define name="PHI_DDGAIN" value="69"/>
     <define name="THETA_DDGAIN" value="69"/>
-    <define name="PSI_DDGAIN"   value="170"/>
+    <define name="PSI_DDGAIN" value="170"/>
   </section>
 
   <section name="GUIDANCE_V" prefix="GUIDANCE_V_">
-    <define name="HOVER_KP"  value="125"/>
-    <define name="HOVER_KD"  value="85"/>
-    <define name="HOVER_KI"  value="30"/>
-    <define name="NOMINAL_HOVER_THROTTLE" value="0.4"/>
+    <define name="HOVER_KP" value="243"/>
+    <define name="HOVER_KD" value="54"/>
+    <define name="HOVER_KI" value="0"/>
+    <define name="NOMINAL_HOVER_THROTTLE" value="0.44"/>
     <define name="ADAPT_THROTTLE_ENABLED" value="FALSE"/>
   </section>
 
   <section name="GUIDANCE_H" prefix="GUIDANCE_H_">
-    <define name="REF_MAX_SPEED"  value="0.5" unit="m/s"/>
-    <define name="PGAIN"          value="265"/>
-    <define name="DGAIN"          value="174"/>
-    <define name="IGAIN"          value="20"/>
+    <define name="REF_MAX_SPEED" value="0.5" unit="m/s"/>
+    <define name="PGAIN" value="265"/>
+    <define name="DGAIN" value="174"/>
+    <define name="IGAIN" value="20"/>
   </section>
 
   <section name="SIMULATOR" prefix="NPS_">
     <define name="ACTUATOR_NAMES" value="nw_motor, ne_motor, se_motor, sw_motor" type="string[]"/>
-    <define name="JSBSIM_MODEL"   value="HOOPERFLY/hooperfly_teensyfly_quad" type="string"/>
+    <define name="JSBSIM_MODEL" value="HOOPERFLY/hooperfly_teensyfly_quad" type="string"/>
     <define name="SENSORS_PARAMS" value="nps_sensors_params_default.h" type="string"/>
     <!-- mode switch on joystick channel 5 (axis numbering starting at zero) -->
-    <define name="JS_AXIS_MODE"   value="4"/>
+    <define name="JS_AXIS_MODE" value="4"/>
   </section>
 
   <section name="AUTOPILOT">
     <define name="MODE_STARTUP" value="AP_MODE_NAV"/>
-    <define name="MODE_MANUAL"  value="AP_MODE_ATTITUDE_DIRECT"/>
-    <define name="MODE_AUTO1"   value="AP_MODE_HOVER_Z_HOLD"/>
-    <define name="MODE_AUTO2"   value="AP_MODE_NAV"/>
-    <define name="ARRIVED_AT_WAYPOINT"   value="0.25"/>
+    <define name="MODE_MANUAL" value="AP_MODE_ATTITUDE_DIRECT"/>
+    <define name="MODE_AUTO1" value="AP_MODE_ATTITUDE_Z_HOLD"/>
+    <define name="MODE_AUTO2" value="AP_MODE_NAV"/>
+    <define name="ARRIVED_AT_WAYPOINT" value="0.25"/>
   </section>
 
 
