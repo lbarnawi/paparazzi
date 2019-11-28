@@ -249,8 +249,8 @@
    <define name="NGAIN" value="0"/>
    <!-- feedforward -->
    <define name="AGAIN" value="0"/>
-   <define name="REF_MAX_SPEED" value="0.3"/>
-   <define name="REF_MAX_ACCEL" value="1.5"/>
+   <define name="REF_MAX_SPEED" value="0.2"/>
+   <define name="REF_MAX_ACCEL" value="1."/>
   </section>
 
   <section name="NAV">

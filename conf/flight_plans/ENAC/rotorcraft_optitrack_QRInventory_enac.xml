@@ -10,16 +10,16 @@
     <waypoint name="STDBY" x="-0.7" y="-0.8"/>
     <waypoint name="TD" x="0.8" y="-1.7"/>
 
-    <waypoint name="G0" y="-2.75" x="3.0" alt="146.94"/>
-    <waypoint name="G1" y="-3.5" x="2.0" alt="146.94"/>
-    <waypoint name="G2" y="-3.5" x="2.0" alt="147.225"/>
-    <waypoint name="G3" y="-2.75" x="3.0" alt="147.225"/>
-    <waypoint name="G4" y="-2.75" x="3.0" alt="147.51"/>
-    <waypoint name="G5" y="-3.5" x="2.0" alt="147.51"/>
-    <waypoint name="G6" y="-3.5" x="2.0" alt="147.795"/>
-    <waypoint name="G7" y="-2.75" x="3.0" alt="147.795"/>
-    <waypoint name="G8" y="-2.75" x="3.0" alt="148.08"/>
-    <waypoint name="G9" y="-3.5" x="2.0" alt="148.08"/>
+    <waypoint name="G0" y="-3.0" x="3.0" alt="147.14"/>
+    <waypoint name="G1" y="-3.5" x="2.7" alt="147.14"/>
+    <waypoint name="G2" y="-3.5" x="2.7" alt="147.32"/>
+    <waypoint name="G3" y="-3.0" x="3.0" alt="147.32"/>
+    <waypoint name="G4" y="-3.0" x="3.0" alt="147.51"/>
+    <waypoint name="G5" y="-3.5" x="2.7" alt="147.51"/>
+    <waypoint name="G6" y="-3.5" x="2.7" alt="147.795"/>
+    <waypoint name="G7" y="-3.0" x="3.0" alt="147.795"/>
+    <waypoint name="G8" y="-3.0" x="3.0" alt="148.08"/>
+    <waypoint name="G9" y="-3.5" x="2.7" alt="148.08"/>
     
 
     <waypoint name="_N1" x="4.5" y="5.2"/>
@@ -70,25 +70,25 @@
     <block name="Inventory QR Code">
       <call_once fun="nav_set_heading_deg(120.)"/>
       <go wp="G0"/>
-      <stay wp="G0" until="stage_time > 7"/>
+      <stay wp="G0" until="stage_time > 3"/>
       <go wp="G1"/>
-      <stay wp="G1" until="stage_time > 1"/>
+      <stay wp="G1" until="stage_time > 2"/>
       <go wp="G2"/>
-      <stay wp="G2" until="stage_time > 1"/>
+      <stay wp="G2" until="stage_time > 2"/>
       <go wp="G3"/>
-      <stay wp="G3" until="stage_time > 1"/>
+      <stay wp="G3" until="stage_time > 2"/>
       <go wp="G4"/>
-      <stay wp="G4" until="stage_time > 1"/>
+      <stay wp="G4" until="stage_time > 2"/>
       <go wp="G5"/>
-      <stay wp="G5" until="stage_time > 1"/>
+      <stay wp="G5" until="stage_time > 2"/>
       <go wp="G6"/>
-      <stay wp="G6" until="stage_time > 1"/>
+      <stay wp="G6" until="stage_time > 2"/>
       <go wp="G7"/>
-      <stay wp="G7" until="stage_time > 1"/>
+      <stay wp="G7" until="stage_time > 2"/>
       <go wp="G8"/>
-      <stay wp="G8" until="stage_time > 1"/>
+      <stay wp="G8" until="stage_time > 2"/>
       <go wp="G9"/>
-      <stay wp="G9" until="stage_time > 1"/>
+      <stay wp="G9" until="stage_time > 3"/>
       <call_once fun="nav_set_heading_towards_waypoint(WP_HOME)"/>
       <go wp="HOME"/>
     </block>
