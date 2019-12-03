@@ -184,7 +184,7 @@
     <!-- Full INDI -->
     <!-- control effectiveness -->
     <define name="G1_ROLL" value="{20 , -20, -20 , 20 }"/>
-    <define name="G1_PITCH" value="{14 , 14, -14 , -14 }"/>
+   <define name="G1_PITCH" value="{14 , 14, -14 , -14 }"/>
     <define name="G1_YAW" value="{-1, 1, -1, 1}"/>
     <define name="G1_THRUST" value="{-.4, -.4, -.4, -.4}"/>
     <!--Counter torque effect of spinning up a rotor-->

@@ -54,6 +54,7 @@
     <block name="Takeoff" strip_button="Takeoff" strip_icon="takeoff.png">
       <exception cond="stateGetPositionEnu_f()->z > 1.0" deroute="Standby"/>
       <call_once fun="NavSetWaypointHere(WP_STDBY)"/>
+      <attitude pitch="0" roll="0" throttle="0.1" until="stage_time>1" vmode="throttle"/>
       <stay climb="nav_climb_vspeed" vmode="climb" wp="STDBY"/>
     </block>
     <block name="Standby" strip_button="Standby" strip_icon="home.png">
@@ -68,7 +69,7 @@
     </block>
     
     <block name="Inventory QR Code">
-      <call_once fun="nav_set_heading_deg(120.)"/>
+      <call_once fun="nav_set_heading_deg(133.)"/>
       <go wp="G0"/>
       <stay wp="G0" until="stage_time > 3"/>
       <go wp="G1"/>
