@@ -114,12 +114,12 @@
     <define name="ACCEL_Y_SIGN" value="-1"/>
     <define name="ACCEL_Z_SIGN" value="1"/>
 
-    <define name="ACCEL_X_NEUTRAL" value="-39"/>
-    <define name="ACCEL_Y_NEUTRAL" value="44"/>
-    <define name="ACCEL_Z_NEUTRAL" value="27"/>
-    <define name="ACCEL_X_SENS"    value="2.49338876545" integer="16"/>
-    <define name="ACCEL_Y_SENS"    value="2.45147153519" integer="16"/>
-    <define name="ACCEL_Z_SENS"    value="2.45036275763" integer="16"/>
+    <define name="ACCEL_X_NEUTRAL" value="-44"/>
+    <define name="ACCEL_Y_NEUTRAL" value="54"/>
+    <define name="ACCEL_Z_NEUTRAL" value="77"/>
+    <define name="ACCEL_X_SENS" value="2.58809979303" integer="16"/>
+    <define name="ACCEL_Y_SENS" value="2.45304411383" integer="16"/>
+    <define name="ACCEL_Z_SENS" value="2.44818719426" integer="16"/>
 
     <define name="MAG_X_SIGN" value="-1"/>
     <define name="MAG_Y_SIGN" value="-1"/>

@@ -102,7 +102,7 @@
   <aircraft
    name="Explorer_216"
    ac_id="216"
-   airframe="airframes/ENAC/quadrotor/explorer_indi_215.xml"
+   airframe="airframes/ENAC/quadrotor/explorer_indi_216.xml"
    radio="radios/cockpitSX.xml"
    telemetry="telemetry/default_rotorcraft.xml"
    flight_plan="flight_plans/ENAC/rotorcraft_optitrack_survey_enac.xml"
