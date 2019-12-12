@@ -259,7 +259,7 @@
   </section>
 
   <section name="BAT">
-    <define name="CRITIC_BAT_LEVEL" value="9.3" unit="V"/>
+    <define name="CRITIC_BAT_LEVEL" value="9.9" unit="V"/>
   </section>
 
   <section name="AUTOPILOT">
