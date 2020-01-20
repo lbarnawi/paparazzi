@@ -44,6 +44,10 @@
 
     <module name="gps" type="datalink"/>
 
+    <module name="light_scheduler">
+      <define name="WS2812_NB_LEDS" value="12"/>
+    </module>
+
     <module name="stabilization" type="int_quat"/>
 
     <module name="ins" type="gps_passthrough"/>
@@ -105,13 +109,12 @@
     <define name="ACCEL_Y_SIGN" value="-1"/>
     <define name="ACCEL_Z_SIGN" value="1"/>
 
-    <define name="ACCEL_X_NEUTRAL" value="-87"/>
-    <define name="ACCEL_Y_NEUTRAL" value="50"/>
-    <define name="ACCEL_Z_NEUTRAL" value="-16"/>
-    <define name="ACCEL_X_SENS" value="2.26755822693" integer="16"/>
-    <define name="ACCEL_Y_SENS" value="2.4468957791" integer="16"/>
-    <define name="ACCEL_Z_SENS" value="2.45151941617" integer="16"/>
-
+    <define name="ACCEL_X_NEUTRAL" value="-108"/>
+    <define name="ACCEL_Y_NEUTRAL" value="62"/>
+    <define name="ACCEL_Z_NEUTRAL" value="-56"/>
+    <define name="ACCEL_X_SENS" value="2.31979063043" integer="16"/>
+    <define name="ACCEL_Y_SENS" value="2.45142041009" integer="16"/>
+    <define name="ACCEL_Z_SENS" value="2.46103122526" integer="16"/>
 
     <define name="MAG_X_SIGN" value="-1"/>
     <define name="MAG_Y_SIGN" value="-1"/>
@@ -252,8 +255,8 @@
    <define name="NGAIN" value="0"/>
    <!-- feedforward -->
    <define name="AGAIN" value="0"/>
-   <define name="REF_MAX_SPEED" value="0.2"/>
-   <define name="REF_MAX_ACCEL" value="1."/>
+   <define name="REF_MAX_SPEED" value="4.0"/>
+   <define name="REF_MAX_ACCEL" value="2.0"/>
   </section>
 
   <section name="NAV">
@@ -263,7 +266,7 @@
   </section>
 
   <section name="BAT">
-    <define name="CRITIC_BAT_LEVEL" value="9.3" unit="V"/>
+    <define name="CRITIC_BAT_LEVEL" value="9.9" unit="V"/>
   </section>
 
   <section name="AUTOPILOT">

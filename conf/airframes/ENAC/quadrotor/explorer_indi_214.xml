@@ -44,6 +44,10 @@
 
     <module name="gps" type="datalink"/>
 
+    <module name="light_scheduler">
+      <define name="WS2812_NB_LEDS" value="12"/>
+    </module>
+
     <module name="stabilization" type="indi"/>
     <module name="guidance" type="indi">
       <define name="GUIDANCE_INDI_SPECIFIC_FORCE_GAIN" value="-500.0"/>
@@ -116,12 +120,12 @@
     <define name="ACCEL_Y_SIGN" value="-1"/>
     <define name="ACCEL_Z_SIGN" value="1"/>
 
-    <define name="ACCEL_X_NEUTRAL" value="-39"/>
-    <define name="ACCEL_Y_NEUTRAL" value="44"/>
-    <define name="ACCEL_Z_NEUTRAL" value="27"/>
-    <define name="ACCEL_X_SENS"    value="2.49338876545" integer="16"/>
-    <define name="ACCEL_Y_SENS"    value="2.45147153519" integer="16"/>
-    <define name="ACCEL_Z_SENS"    value="2.45036275763" integer="16"/>
+    <define name="ACCEL_X_NEUTRAL" value="-108"/>
+    <define name="ACCEL_Y_NEUTRAL" value="62"/>
+    <define name="ACCEL_Z_NEUTRAL" value="-56"/>
+    <define name="ACCEL_X_SENS" value="2.31979063043" integer="16"/>
+    <define name="ACCEL_Y_SENS" value="2.45142041009" integer="16"/>
+    <define name="ACCEL_Z_SENS" value="2.46103122526" integer="16"/>
 
     <define name="MAG_X_SIGN" value="-1"/>
     <define name="MAG_Y_SIGN" value="-1"/>
